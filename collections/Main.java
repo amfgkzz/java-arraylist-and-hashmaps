@@ -41,5 +41,38 @@ public class Main
 
         System.out.println(Arrays.toString(dogArray));
 
+        System.out.println("*** Array List ***"); // more similar in concept to javascript
+
+        ArrayList<Dogs> dogsArrayList = new ArrayList<Dogs>(); // array list of type Dogs
+        dogsArrayList.addAll(Arrays.asList(dogArray));
+
+        dogsArrayList.add(new Dogs("Mutt", 15, true)); // <-- use the method "add" instantiating a new object of type dog
+
+        for ( Dogs d: dogsArrayList ) // each element is called "d" of type Dogs 
+        {  
+            if (d.getAverageWeight() >= 50)
+            {
+                System.out.println(d.getBreed() + " are large");
+            } 
+            else
+            {
+                System.out.println(d.getBreed() + " are small");
+            }
+            // System.out.println(d); // <-- common naming convention for class types, using lowercase letter of whatever that word is 
+        }
+
+        System.out.println();
+
+        // cannot compare strings directly with equals ie "koua" == "koua" because strings are objects, 
+        // DO NOT COMPARE OBJECTS because will probably not give u results u are after
+
+        if (dogsArrayList.get(2).getBreed().equals("Turtle")) // to compare Strings have to use .equals <- method
+        {
+            System.out.println("We have a match");
+        }
+        else 
+        {
+            System.out.println("No match for " + dogsArrayList.get(2).getBreed());
+        }
     }
 }
