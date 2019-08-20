@@ -14,6 +14,20 @@ public class Main
         
         System.out.println("*** Arrays ***");
 
-        dogArray[0] = new Dogs("Springer", 50, false);
+        // INSTANTIATED AN OBJECT OF TYPE DOGS at array element specified
+        dogArray[0] = new Dogs("Springer", 50, false); // element zero
+        dogArray[1] = new Dogs("Bulldog", 50, true); // element one
+        dogArray[2] = new Dogs("Collie", 50, false); // element two
+        dogArray[3] = new Dogs("Chihuahua", 5, true); // element three
+        dogArray[4] = new Dogs("Corgie", 35, true); // element four
+        // Java will default (meaning if missing or no value present -> will give value ie null, undefined, zero)
+        // i.e. if dogArray[2] was not defined, it will equal to null
+
+        System.out.println("For Loop");
+
+        for (int i = 0; i < dogArray.length; i++)
+        {
+            System.out.println(dogArray[i]);
+        }
     }
 }

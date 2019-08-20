@@ -53,7 +53,7 @@ public class Dogs
         return "Dogs : {" + "\n" +
         "breed: " + breed + ",\n"+
         "averageWeight: " + averageWeight + ",\n" +
-        "apartment: " + apartment + "\n" +
+        "apartment: " + apartment + ",\n" +
         " }";
     }
 }
