@@ -15,10 +15,15 @@ public class Dogs
         this.apartment = apartment;
     }
 
-    // methods - behavior - getters
+    // methods - behavior - getters and setters
     private String getBreed()
     {
         return breed;
+    }
+
+    private void setBreed(String breed)
+    {
+        this.breed = breed;
     }
 
     private int getAverageWeight()
@@ -26,24 +31,28 @@ public class Dogs
         return averageWeight;
     }
 
-    private boolean getApartment()
-    {
-        return apartment;
-    }
-
-    // methods - behavior - setters
-    private void setBreed(String breed)
-    {
-        this.breed = breed;
-    }
-
     private void setAverageWeight(int taco)
     {
         this.averageWeight = taco;
     }
 
+    // because it is a boolean, usually named with an "is" instead of "get" <-- common
+    private boolean isApartment()
+    {
+        return apartment;
+    }
+
     private void setApartment(boolean taco)
     {
         this.apartment = taco;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Dogs : {" + "\n" +
+        "breed: " + breed + ",\n"+
+        "averageWeight: " + averageWeight + ",\n" +
+        "apartment: " + apartment;
     }
 }
