@@ -16,33 +16,33 @@ public class Dogs
     }
 
     // methods - behavior - getters and setters
-    private String getBreed()
+    public String getBreed()
     {
         return breed;
     }
 
-    private void setBreed(String breed)
+    public void setBreed(String breed)
     {
         this.breed = breed;
     }
 
-    private int getAverageWeight()
+    public int getAverageWeight()
     {
         return averageWeight;
     }
 
-    private void setAverageWeight(int taco)
+    public void setAverageWeight(int taco)
     {
         this.averageWeight = taco;
     }
 
     // because it is a boolean, usually named with an "is" instead of "get" <-- common
-    private boolean isApartment()
+    public boolean isApartment()
     {
         return apartment;
     }
 
-    private void setApartment(boolean taco)
+    public void setApartment(boolean taco)
     {
         this.apartment = taco;
     }

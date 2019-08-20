@@ -1,4 +1,5 @@
 package collections;
+import java.util.*;
 
 public class Main
 {
@@ -29,5 +30,16 @@ public class Main
         {
             System.out.println(dogArray[i]);
         }
+
+        System.out.println("Breed 4 good for apartment? " + dogArray[3].isApartment());
+
+        System.out.println();
+
+        System.out.println(dogArray.toString());
+
+        System.out.println();
+
+        System.out.println(Arrays.toString(dogArray));
+
     }
 }
