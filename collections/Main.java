@@ -95,6 +95,7 @@ public class Main
 
         // in arraylist there are NO EMPTY SPOTS, when we remove it shifts everything up or back in order
         // iterators come into play when we work with Spring
+        // anytime we create an internal object -> in our case iterator we create a class file with dollar signs in our case it is main$1.class
         Iterator<Dogs> iterator = dogsArrayList.iterator(); // method inside object arraylist that converts it into an iterator
         // same result as for loop
         while (iterator.hasNext()) // hasNext method returns true as long as the iterator still has elements to go like for loop will go thru everything in there
@@ -106,5 +107,32 @@ public class Main
         }
 
         System.out.println();
+
+        // because arraylist keeps things in order WE CAN SORT THEM
+        // groups of data are called "Collections"
+        Collections.sort(dogsArrayList, new Comparator<Dogs>()
+        {
+            // comparing the TWO objects DESC
+           // public int compare (Dogs o1, Dogs o2) // HAVE TO BE SAME TYPE, o1 and o2 are object1, object2
+           // {
+           //     return o2.getBreed().compareToIgnoreCase(o1.getBreed());
+           // }
+
+            // *** ASC CASE
+            public int compare (Dogs o1, Dogs o2) // HAVE TO BE SAME TYPE, o1 and o2 are object1, object2
+            {
+                // return o1.getBreed().compareToIgnoreCase(o2.getBreed());
+
+                // SORT BY AVERAGE WEIGHT
+                return o1.getAverageWeight() - o2.getAverageWeight(); // asc, but if want desc order switch objects around
+            }
+
+
+        });
+
+        for ( Dogs d : dogsArrayList)
+        {
+            System.out.println(d);
+        }
     }
 }
