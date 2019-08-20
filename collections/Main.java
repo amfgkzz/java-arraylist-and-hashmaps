@@ -134,5 +134,63 @@ public class Main
         {
             System.out.println(d);
         }
+
+        System.out.println();
+
+        System.out.println("*** HashMaps ***");
+        // when working with java WEB API's most common collections we work with is arraylist
+        // next most common is HashMaps
+        // HashMap<Key, Value> keys are unique (most common keys are integer, 
+        // string but can be anything as long as unique),
+        // values can be whatever
+        HashMap<Integer, Dogs> dogsHashMap = new HashMap<Integer, Dogs>();
+
+        int hashCount = 0;
+        for (Dogs d : dogsArrayList)
+        {
+            // the put method will do
+            // put(KEY, VALUE) - KEY does not exist - add
+            // - KEY DOES EXIST - replace, ie will replace/add if does or doesnt exist
+            dogsHashMap.put(hashCount, d);
+            hashCount++;
+        }
+
+        dogsArrayList.clear(); // removes all of the elements in the arraylist
+        
+        System.out.println(dogsHashMap.get(3)); 
+        // do not assume that hashmaps are in order because they arent
+        // but this makes it very very efficient at using memory, java will handle where to put in memory
+        // without worrying about order
+        System.out.println(dogsHashMap.size());
+        dogsHashMap.remove(3);
+        System.out.println(dogsHashMap.get(3));
+        System.out.println(dogsHashMap.size());
+        System.out.println();
+
+        for (Integer i : dogsHashMap.keySet()) // method keySet will return all the keys in the hashmap
+        {
+            System.out.println("key: " + i + " value: " + dogsHashMap.get(i));
+        }
+        System.out.println();
+
+        // In order to sort a hashmap, must convert to an arraylist AND THEN sort it
+        // ArrayList can only take in ONE type, but HashMap.Entry <-- is a type that pairs up our hashmap
+        // with key, values. Entry also needs the parameters
+        ArrayList<HashMap.Entry<Integer, Dogs>> sortedMap = new ArrayList<HashMap.Entry<Integer, Dogs>>();
+        sortedMap.addAll(dogsHashMap.entrySet()); // method that returns all of the HashMap.Entry
+
+        Collections.sort(sortedMap, new Comparator<HashMap.Entry<Integer, Dogs>>()
+        {
+            public int compare (HashMap.Entry<Integer, Dogs> o1, HashMap.Entry<Integer, Dogs> o2)
+            {
+                return o1.getValue().getAverageWeight() - o2.getValue().getAverageWeight();
+            }
+        });
+
+        for ( HashMap.Entry<Integer, Dogs> d : sortedMap )
+        {
+            System.out.println("key: " + d.getKey() + " value: " + d.getValue());
+        }
+        System.out.println();
     }
 }
